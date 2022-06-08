@@ -1,0 +1,11 @@
+#!/usr/bin/bash                                                                                                                                                                                              
+                                                                                                                                                                                                             
+#PBS -l nodes=1:ppn=1                                                                                                                                                                                        
+#PBS -l walltime=0:02:00                                                                                                                                                                                     
+#PBS -N Hryshchuk_integral                                                                                                                                                                                   
+                                                                                                                                                                                                             
+cd $PBS_O_WORKDIR                                                                                                                                                                                            
+                                                                                                                                                                                                             
+read -r line < $1                                                                                                                                                                                            
+result=`~/Lab1/integral $1 | tail -n 1 | cut -f2 -d\ `                                                                                                                                                       
+echo $result > ~/Lab1/output
