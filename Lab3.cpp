@@ -227,6 +227,11 @@ int main()
     dtime = omp_get_wtime();
     matrix_parallel = generate_inverse_parallel(matrix, 6);
     cout << "Time taken in parallel:" << omp_get_wtime() - dtime << endl;
+    
+    cout << "Number of threads: 7" << endl;
+    dtime = omp_get_wtime();
+    matrix_parallel = generate_inverse_parallel(matrix, 7);
+    cout << "Time taken in parallel:" << omp_get_wtime() - dtime << endl;
 
     cout << endl;
 
